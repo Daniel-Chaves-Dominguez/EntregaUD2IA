@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor offline · Panel de administración</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <header class="cabecera">
+            <h1>Traductor offline</h1>
+            <p class="subtitulo">
+                Traducción local en el navegador con Transformers.js. No se envía ningún texto a servidores externos.
+            </p>
+            <span id="dispositivo" class="etiqueta">Detectando aceleración...</span>
+        </header>
+
+        <section class="tarjeta">
+            <div class="barra-idiomas">
+                <span id="idiomaOrigen" class="idioma">Inglés</span>
+                <button id="btnCambiar" type="button" class="btn-secundario" title="Cambiar dirección de traducción">
+                    ⇄ Cambiar
+                </button>
+                <span id="idiomaDestino" class="idioma">Español</span>
+            </div>
+
+            <label for="textoEntrada" class="etiqueta-campo">Texto a traducir</label>
+            <textarea id="textoEntrada" rows="6" placeholder="Escribe o pega aquí el borrador o ticket..."></textarea>
+
+            <button id="btnTraducir" type="button" class="btn-principal" disabled>Traducir</button>
+
+            <div class="estado-contenedor">
+                <p id="estado" class="estado" role="status" aria-live="polite">Cargando modelo...</p>
+                <div id="progreso" class="progreso" hidden>
+                    <div id="barraProgreso" class="progreso-barra"></div>
+                </div>
+            </div>
+
+            <label for="resultado" class="etiqueta-campo">Resultado</label>
+            <div id="resultado" class="resultado" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
